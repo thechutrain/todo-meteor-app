@@ -1,1 +1,22 @@
 /* CSS declarations go here */
+
+/*
+Stying each task component!
+*/
+.completed-task {
+  color: #888;
+  text-decoration: line-through;
+}
+
+/*.completed-task {
+  color: #888;
+  text-decoration: line-through;
+}*/
+
+button > .delete-task {
+  /**/
+}
+
+.toggle-completed {
+  /**/
+}

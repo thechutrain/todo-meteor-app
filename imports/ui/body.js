@@ -24,6 +24,7 @@ Template.body.events({
     Tasks.insert({
       text,
       createdAt: new Date(),
+      completed: false,
     });
 
     //clear form
