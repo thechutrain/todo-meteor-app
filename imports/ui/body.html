@@ -3,6 +3,11 @@
     <header>
       <h1> To Do(s):</h1>
     </header>
+  
+    <form class="new-task">
+      <input type="text" name="text" placeholder="Type to add a new task">
+    </form>
+
     <ul>
       {{#each tasks}}
         {{ >task}}
