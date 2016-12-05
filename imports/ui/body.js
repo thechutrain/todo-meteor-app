@@ -1,11 +1,10 @@
 import { Template } from 'meteor/templating';
+import { Tasks } from '../api/tasks.js'; // Tasks is the Mongo.Collection!
 
 import './body.html';
 
 Template.body.helpers({
-  tasks: [
-    { text: 'This is task1'},
-    { text: 'This is task2'},
-    { text: 'This is task3'},
-  ],
+  tasks(){
+    return Tasks.find({});
+  }
 });
