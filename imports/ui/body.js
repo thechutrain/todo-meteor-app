@@ -39,13 +39,14 @@ Template.body.events({
     const text = target.text.value;
 
     // insert the task into a collection
-    Tasks.insert({
-      text,
-      createdAt: new Date(),
-      completed: false,
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+    // Tasks.insert({
+    //   text,
+    //   createdAt: new Date(),
+    //   completed: false,
+    //   owner: Meteor.userId(),
+    //   username: Meteor.user().username,
+    // });
+    Meteor.call('tasks.insert', text);
     //clear form
     target.text.value = " ";
   },
