@@ -8,6 +8,9 @@
       </label>
     </header>
   
+  {{> loginButtons}}
+
+  {{#if currentUser }}
     <form class="new-task form-inline">
       <!-- <div class="form-group"> -->
         <label for="taskInput">Task Input</label>
@@ -15,6 +18,8 @@
       <!-- </div> -->
       <button type="submit" class="btn btn-info">+ Add task</button>
     </form>
+
+  {{/if }}
 
     <ul class="list-group">
       {{#each tasks}}

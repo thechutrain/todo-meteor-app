@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
+import { Meteor } from 'meteor/meteor';
 
 import { Tasks } from '../api/tasks.js'; // Tasks is the Mongo.Collection!
 
@@ -42,6 +43,8 @@ Template.body.events({
       text,
       createdAt: new Date(),
       completed: false,
+      owner: Meteor.userId(),
+      username: Meteor.user().username,
     });
     //clear form
     target.text.value = " ";

@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 
 import './tasks.html';
+// import './displayTask.html';
 
 Template.task.events({
   'click .toggle-completed'(){
