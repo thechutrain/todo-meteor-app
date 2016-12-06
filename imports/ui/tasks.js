@@ -5,6 +5,12 @@ import { Tasks } from '../api/tasks.js';
 import './tasks.html';
 // import './displayTask.html';
 
+Template.task.helpers({
+  isOwner(){
+    return this.owner === Meteor.userId();
+  }
+})
+
 Template.task.events({
   'click .toggle-completed'(){
     // Tasks.update(this._id, {
@@ -17,4 +23,9 @@ Template.task.events({
     // Tasks.remove(this._id);
     Meteor.call('tasks.remove', this._id);
   },
+
+  'click .toggle-private'(){
+    Meteor.call('tasks.setPrivate', this._id, !this.private)
+  },
+
 });

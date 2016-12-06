@@ -1,12 +1,23 @@
 <template name="task">
-  <li class="list-group-item {{#if completed}}completed-task{{/if}}">
+  <li class="list-group-item {{#if completed}}completed-task{{/if}}  {{#if private}}private{{/if}}">
 
     <button type="button" class="btn btn-danger delete-task">&times;</button>
 
     <input type="checkbox" checked="{{completed}}" class="toggle-completed">
 
-    <span class="task-text"> {{ text }}</span>
+    <span class="task-text"> {{ taskText }}</span>
 
     <p class="username">BY: <strong>{{ username }}</strong></p>
+
+        {{#if isOwner}}
+      <button class="toggle-private">
+        {{#if private}}
+          Private
+        {{else}}
+          Public
+        {{/if}}
+      </button>
+    {{/if}}
+
   </li>
 </template>

@@ -6,6 +6,14 @@ import { Tasks } from '../api/tasks.js'; // Tasks is the Mongo.Collection!
 
 import './body.html';
 
+
+// when the template is made this code runs!
+Template.body.onCreated(function bodyOnCreated(){
+  this.state = new ReactiveDict();
+  Meteor.subscribe('tasks');
+});
+
+
 Template.body.helpers({
   tasks(){
     const instance = Template.instance(); //?? What does Template.instance() get? this??
@@ -19,11 +27,6 @@ Template.body.helpers({
   incompleteCount(){
     return Tasks.find({completed: false}).count();
   },
-});
-
-
-Template.body.onCreated(function bodyOnCreated(){
-  this.state = new ReactiveDict();
 });
 
 
